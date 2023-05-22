@@ -10,7 +10,8 @@ load_dotenv()
 def get_final_filename(f: str) -> str:
     f = f.split(".")
     filename = ".".join(f[0:-1])
-    processed_file_name = filename + os.environ.get("DEST_TYPE")
+    ext=os.environ.get("DEST_TYPE")
+    processed_file_name = f"{filename}.{ext}"
     return processed_file_name
 
 
